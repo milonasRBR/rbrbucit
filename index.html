@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RBR Tech Support</title>
+  <title>RBR BUCIT Tech Support</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,6 @@
       z-index: 2;
     }
 
-    /* Animated Hero Text */
     .hero h1 {
       font-size: 3.8rem;
       font-weight: 700;
@@ -78,7 +77,6 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* MOBILE HERO */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.6rem; }
       .hero p { font-size: 1rem; }
@@ -98,7 +96,6 @@
       font-weight: bold;
     }
 
-    /* Make Steps Wider */
     #process .steps-wrapper {
       max-width: 900px;
       margin: auto;
@@ -122,8 +119,8 @@
       content: counter(step);
       counter-increment: step;
       position: absolute;
-      left: 125px;
-      top: -5px;
+      left: 10px;
+      top: -8px;
       width: 50px;
       height: 50px;
       background: var(--rbr-maroon);
@@ -135,15 +132,27 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    /* ICON ANIMATIONS */
+    @media (max-width: 576px) {
+      #process ol.steps li {
+        padding-left: 75px;
+      }
+
+      #process ol.steps li::before {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 1rem;
+      }
+    }
+
     .issue-card i {
       transition: transform .3s ease;
     }
+
     .issue-card:hover i {
       transform: scale(1.25) rotate(-5deg);
     }
 
-    /* ISSUE CARDS */
     .issue-card {
       border: none;
       border-top: 3px solid var(--rbr-maroon);
@@ -160,20 +169,17 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.18);
     }
 
-    /* TROUBLESHOOTING GRID CLEANUP */
     #issues .row {
       max-width: 1100px;
       margin: auto;
     }
 
-    /* SAFETY */
     #safety {
       padding: 40px 0;
       text-align: center;
       font-size: 1.2rem;
     }
 
-    /* FOOTER */
     footer {
       background: var(--rbr-maroon);
       color: white;
@@ -191,11 +197,17 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-label="RBR Tech Support Homepage">
     <div class="overlay"></div>
     <div class="container">
-      <h1>RBR Tech Support</h1>
-      <p>We're here to help you keep learning without interruption.</p>
+      <h1>RBR BUCIT Tech Support</h1>
+      <p>The school’s student run Chromebook repair service.</p>
+      <p>We’re here to help you stay connected and learning without interruption.</p>
+
+      <div class="mt-4">
+        <a href="#process" class="btn btn-outline-light btn-lg me-2">Get Help</a>
+        <a href="#issues" class="btn btn-outline-light btn-lg">Troubleshooting</a>
+      </div>
     </div>
   </section>
 
@@ -205,17 +217,29 @@
     <section id="process" data-aos="fade-up">
       <div class="steps-wrapper">
         <h2>How to Get Help</h2>
-        <p>Follow these simple steps to request support or repair.</p>
+        <p>Follow these steps if your Chromebook needs service or repair.</p>
+
+        <p class="text-muted">
+          <i class="bi bi-clock-history"></i>
+          Most repairs are completed within <strong>1–3 school days</strong>.
+        </p>
 
         <ol class="steps">
           <li>
-            Submit the 
-            <a href="https://forms.gle/nVxUjnfCPYZvRETVA" target="_blank">Tech Support Form</a>
-            <a href="https://forms.gle/ZVtGk5e7YuvH4AjA9" target="_blank">(In Spanish)</a>.
+            If your Chromebook breaks <strong>before Mod 1</strong>, use the in classroom loaner until Mod 1.
+            Then bring your device to <strong>📍 Room 231</strong> at the beginning of Mod 1.
           </li>
-          <li>Tell your teacher that you’ve submitted the form.</li>
-          <li>Watch your student email for updates.</li>
-          <li>If needed, you'll receive a loaner Chromebook.</li>
+          <li>
+            If your Chromebook breaks <strong>after Mod 1</strong>, bring it to the
+            <strong>RBR District IT Department</strong>, where you can receive a loaner Chromebook.
+            If you do not need a device during class or at home, you may instead bring it to
+            <strong>📍 Room 231</strong> during Mod 1.
+          </li>
+          <li>
+            You will receive an email notification when your Chromebook repair is complete.
+            Please pick up your device and return any loaner during <strong>Mod 1</strong> in
+            <strong>📍 Room 231</strong>.
+          </li>
         </ol>
       </div>
     </section>
@@ -227,7 +251,6 @@
 
         <div class="row g-4">
 
-          <!-- Won’t Turn On -->
           <div class="col-md-6 col-lg-4">
             <div class="issue-card" data-aos="fade-up">
               <i class="bi bi-power fs-1" style="color: var(--rbr-maroon);"></i>
@@ -236,33 +259,31 @@
                 <li>Plug in the charger.</li>
                 <li>Hold the power button.</li>
                 <li>Charge for one hour.</li>
-                <li>Hard reboot: Hold Refresh + Power.</li>
-                <li>If still dead, fill out the form and go to Room 231.</li>
+                <li>Perform a hard reboot: Hold Refresh + Power.</li>
+                <li>If it still does not turn on, bring it to Room 231.</li>
               </ol>
             </div>
           </div>
 
-          <!-- Only Works Plugged In -->
           <div class="col-md-6 col-lg-4">
             <div class="issue-card" data-aos="fade-up">
               <i class="bi bi-battery-half fs-1" style="color: var(--rbr-maroon);"></i>
               <h3>Only Works Plugged In</h3>
               <ol>
-                <li>Keep it plugged in for an hour.</li>
-                <li>Check if battery % increases.</li>
-                <li>If not, battery needs service go to Room 231.</li>
+                <li>Leave the Chromebook plugged in for one hour.</li>
+                <li>Check to see if the battery percentage increases.</li>
+                <li>If not, the battery may need service. Bring it to Room 231.</li>
               </ol>
             </div>
           </div>
 
-          <!-- Flashing Yellow Light (NEW) -->
           <div class="col-md-6 col-lg-4">
             <div class="issue-card" data-aos="fade-up">
               <i class="bi bi-lightning-charge fs-1" style="color: var(--rbr-maroon);"></i>
               <h3>Flashing Yellow Light</h3>
               <ol>
-                <li>Leave it charging overnight and check in the morning.</li>
-                <li>If still flashing, fill out the form and bring it to Room 231.</li>
+                <li>Leave the Chromebook charging overnight.</li>
+                <li>If the light continues to flash, bring it to Room 231.</li>
               </ol>
             </div>
           </div>
@@ -275,24 +296,32 @@
     <section id="safety" data-aos="fade-up">
       <div class="container">
         <h2 style="color: var(--rbr-maroon);">Safety & Care Reminders</h2>
-        <p>Chromebooks are fragile. Screens crack easily so protect your device inside your bag.</p>
+        <p>Chromebooks are fragile. Screens crack easily, so always protect your device inside your bag.</p>
+          </ul>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container text-center">
       <p><strong>Red Bank Regional High School</strong></p>
       <p>101 Ridge Road, Little Silver, NJ 07739</p>
       <p>Phone: (732) 842-8000</p>
       <p><a href="https://www.rbrhs.org/" target="_blank">www.rbrhs.org</a></p>
-      <p class="mt-3 mb-0">&copy; RBRHS IT Department</p>
+
+      <p class="mt-3 mb-1">
+        <strong>BUCIT Tech Support Hours:</strong> Mod 1 (School Days)
+      </p>
+      <p class="mb-1">
+        <strong>Email:</strong> bucittech@rbrhs.org
+      </p>
+
+      <p class="mb-0">&copy; RBRHS IT Department</p>
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
